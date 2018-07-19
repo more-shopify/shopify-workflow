@@ -1,0 +1,7 @@
+@function porcentaje($medida, $total) {
+  @return ($medida / $total) * 100%;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
