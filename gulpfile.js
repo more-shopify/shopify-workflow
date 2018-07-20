@@ -51,12 +51,19 @@ gulp.task('scripts', () => {
 })
 
 gulp.task('imagemin', () => {
-  gulp.src('./src/img/*')
-    .pipe(imagemin({
-      progressive: true,
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest('./assets/'))
+  gulp.src('img/*')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ]))
+    .pipe(gulp.dest('assets/'))
 })
 
 gulp.task('default', () => {
