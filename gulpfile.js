@@ -21,7 +21,7 @@ const output = '../assets/'
 
 
 gulp.task('sass', () => {
-  gulp.src('sass/main.scss')
+  gulp.src(input)
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: 'compressed'
