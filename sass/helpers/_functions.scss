@@ -5,3 +5,8 @@
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
+
+// Función para convertir texto en pt a px
+@function font-size($size) {
+  @return $size * 1.3333333333333333;
+}

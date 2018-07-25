@@ -1,18 +1,4 @@
-@mixin placeholder-color($text-color) {
-  /* Chrome / Opera / Safari */
-  &::-webkit-input-placeholder {
-	  color: $text-color;
-  }
-  /* Firefox +19 */
-	&::-moz-placeholder {
-	  color: $text-color;
-  }
-  /* IE 10+ */
-	&:-ms-input-placeholder {
-	  color: $text-color;
-  }
-  /* Firefox 18- */
-	&:-moz-placeholder {
-	  color: $text-color;
-	}
-}
+// Example
+// %placeholder {
+//   rule: value;
+// }
