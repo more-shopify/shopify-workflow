@@ -35,19 +35,18 @@ gulp.task('sass', () => {
 
 gulp.task('scripts', () => {
 
-  var babel = 
+  var babeljs = 
     gulp.src('js/main.js')
       .pipe(babel({
         presets: ['env']
       }))
-      .pipe(gulp.dest(output));
 
-  var concat = 
+  var concatjs = 
     gulp.src(['js/lib/*.js', 'js/main.js'])
       .pipe(concat('scripts.all.js'))
       .pipe(gulp.dest(output));
 
-  return merge(babel, concat);
+  return merge(babeljs, concatjs);
 })
 
 gulp.task('imagemin', () => {
