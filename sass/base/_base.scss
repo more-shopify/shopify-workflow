@@ -1,0 +1,4 @@
+// Este estilo evita que los botones de formulario pierdan sus estilos en Safari
+input:matches([type="button"], [type="submit"], [type="reset"]) {
+    -webkit-appearance: initial !important;
+}
