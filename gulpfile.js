@@ -36,13 +36,14 @@ gulp.task('sass', () => {
 gulp.task('scripts', () => {
 
   var babeljs = 
-    gulp.src('js/main.js')
+    gulp.src('js/*.js')
       .pipe(babel({
         presets: ['env']
       }))
+      .pipe(gulp.dest('js/babel/'));
 
   var concatjs = 
-    gulp.src(['js/lib/*.js', 'js/main.js'])
+    gulp.src(['js/lib/*.js', 'js/babel/*.js'])
       .pipe(concat('scripts.all.js'))
       .pipe(gulp.dest(output));
 
